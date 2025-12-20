@@ -199,7 +199,7 @@ public class add_membership extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new add_membership().setVisible(true));
+        //java.awt.EventQueue.invokeLater(() -> new add_membership().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
