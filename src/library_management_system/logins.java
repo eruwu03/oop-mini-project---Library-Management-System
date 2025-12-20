@@ -120,6 +120,7 @@ public class logins extends javax.swing.JFrame {
                 
                 if(realpass.equals(pass)){
                     JOptionPane.showMessageDialog(this, "Success");
+                    this.dispose();
                 }
                 else{
                     JOptionPane.showMessageDialog(this, "Wrong username or password");
