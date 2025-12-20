@@ -119,7 +119,7 @@ public class logins extends javax.swing.JFrame {
                 String realpass=rs.getString("password");
                 
                 if(realpass.equals(pass)){
-                    JOptionPane.showMessageDialog(this, "Success");
+                    java.awt.EventQueue.invokeLater(() -> new add_membership().setVisible(true));
                 }
                 else{
                     JOptionPane.showMessageDialog(this, "Wrong username or password");
