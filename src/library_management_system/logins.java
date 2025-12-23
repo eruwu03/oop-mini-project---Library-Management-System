@@ -126,8 +126,7 @@ public class logins extends javax.swing.JFrame {
                 }
             }
         }
-        catch(Exception e){
-            
+        catch (Exception e) {
         }
     }//GEN-LAST:event_login_buttonActionPerformed
 
