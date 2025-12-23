@@ -13,12 +13,11 @@ public class DBConnection {
     private static final String USER = "najmi";
     private static final String PASSWORD = "Katakunci#25";
 
-    public static Connection getConnection() {
+    public static Connection getConnection() throws dbErrorException {
         try {
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
+            throw new dbErrorException("Lost connection to database!");
         }
     }
 }
