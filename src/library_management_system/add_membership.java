@@ -15,7 +15,20 @@ import javax.swing.JOptionPane;
  *
  * @author eru
  */
-public class add_membership extends javax.swing.JFrame {
+public class add_membership extends javax.swing.JFrame implements InputValidation {
+    
+    @Override
+    public boolean validateFields() {
+        return !newId.getText().isEmpty()
+            && !newName.getText().isEmpty()
+            && !newPhone.getText().isEmpty()
+            && !newDate.getText().isEmpty();
+    }
+
+    @Override
+    public void showMessage(String message) {
+         JOptionPane.showMessageDialog(this, message);
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(add_membership.class.getName());
 
@@ -183,10 +196,10 @@ public class add_membership extends javax.swing.JFrame {
         String date = newDate.getText(); 
 
        
-        if (id.isEmpty() || name.isEmpty() || phone.isEmpty() || date.isEmpty()) {
-            throw new emptyFieldException("All fields are required!");
-        }
-
+        if (!validateFields()) {
+            showMessage("Please fill all fields");
+            return;
+        }    
   
         addMembership(id, name, phone, date);
 
@@ -198,15 +211,6 @@ public class add_membership extends javax.swing.JFrame {
         );
 
         clearFields();
-
-    } catch (emptyFieldException e) {
-        // Show the empty fields error
-        JOptionPane.showMessageDialog(
-            this,
-            e.getMessage(),
-            "Input Error",
-            JOptionPane.WARNING_MESSAGE
-        );
 
     } catch (dbErrorException e) {
         // Show database error
@@ -275,4 +279,5 @@ public class add_membership extends javax.swing.JFrame {
     private javax.swing.JTextField newName;
     private javax.swing.JTextField newPhone;
     // End of variables declaration//GEN-END:variables
+
 }
