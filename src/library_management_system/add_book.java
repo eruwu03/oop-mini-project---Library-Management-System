@@ -27,6 +27,14 @@ public class add_book extends javax.swing.JFrame {
     public add_book() { 
         initComponents();
     }
+    
+    private void clearFields() {
+        jTextField9.setText("");
+        jTextField6.setText("");
+        jTextField3.setText("");
+        jTextField1.setText("");
+        jTextField7.setText("");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -221,6 +229,10 @@ public class add_book extends javax.swing.JFrame {
         stmt.executeUpdate(sql);
        
         JOptionPane.showMessageDialog(null,"Book sucessfully updated");
+        
+        clearFields();
+        
+        
 
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null,"Book ID already exist");

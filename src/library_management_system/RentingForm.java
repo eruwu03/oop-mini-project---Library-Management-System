@@ -44,7 +44,6 @@ public class RentingForm extends javax.swing.JFrame {
         rentDonebtn = new javax.swing.JButton();
         rentCancelbtn = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        rentBackbtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,16 +105,6 @@ public class RentingForm extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/logo.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, -1, -1));
-
-        rentBackbtn.setBackground(new java.awt.Color(204, 204, 204));
-        rentBackbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/back.png"))); // NOI18N
-        rentBackbtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        rentBackbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rentBackbtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(rentBackbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/bg.jpg"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -188,14 +177,14 @@ public class RentingForm extends javax.swing.JFrame {
     
     }//GEN-LAST:event_rentDonebtnActionPerformed
 
-    private void rentBackbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentBackbtnActionPerformed
-        setVisible(false); // Hide current window
-    }//GEN-LAST:event_rentBackbtnActionPerformed
-
     private void rentCancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentCancelbtnActionPerformed
-    rentBookidTxt.setText("");
-    rentMemberidTxt.setText("");
-    rentDurationTxt.setText("");
+    java.awt.EventQueue.invokeLater(() -> {
+                Dashboard dashboard = new Dashboard();
+                dashboard.setLocationRelativeTo(null);
+                dashboard.setVisible(true);
+            });
+            
+            this.dispose();
     }//GEN-LAST:event_rentCancelbtnActionPerformed
 
     /**
@@ -230,7 +219,6 @@ public class RentingForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JButton rentBackbtn;
     private javax.swing.JTextField rentBookidTxt;
     private javax.swing.JButton rentCancelbtn;
     private javax.swing.JButton rentDonebtn;
