@@ -177,17 +177,17 @@ public class add_membership extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
         // Read values
-        String id = newId.getText().trim();
-        String name = newName.getText().trim();
-        String phone = newPhone.getText().trim();
-        String date = newDate.getText().trim(); // yyyy-MM-dd
+        String id = newId.getText();
+        String name = newName.getText();
+        String phone = newPhone.getText();
+        String date = newDate.getText(); 
 
-        // 1️⃣ Throw exception if any field is empty
+       
         if (id.isEmpty() || name.isEmpty() || phone.isEmpty() || date.isEmpty()) {
             throw new emptyFieldException("All fields are required!");
         }
 
-        // 2️⃣ Call method to add membership to DB
+  
         addMembership(id, name, phone, date);
 
         JOptionPane.showMessageDialog(

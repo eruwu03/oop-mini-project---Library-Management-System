@@ -31,7 +31,6 @@ public class ReturnForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        returnBackbtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,16 +43,6 @@ public class ReturnForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        returnBackbtn.setBackground(new java.awt.Color(204, 204, 204));
-        returnBackbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/back.png"))); // NOI18N
-        returnBackbtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        returnBackbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                returnBackbtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(returnBackbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 16, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,11 +99,6 @@ public class ReturnForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void returnBackbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnBackbtnActionPerformed
-        setVisible(false); // Hide current window
-        
-    }//GEN-LAST:event_returnBackbtnActionPerformed
-
     private void returnDonebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnDonebtnActionPerformed
                                                  
     String bookId = returnBookidTxt.getText().trim();
@@ -168,8 +152,13 @@ public class ReturnForm extends javax.swing.JFrame {
     }//GEN-LAST:event_returnDonebtnActionPerformed
 
     private void returnCancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnCancelbtnActionPerformed
-       returnBookidTxt.setText("");
-       returnMemberidTxt.setText("");
+      java.awt.EventQueue.invokeLater(() -> {
+                Dashboard dashboard = new Dashboard();
+                dashboard.setLocationRelativeTo(null);
+                dashboard.setVisible(true);
+            });
+            
+            this.dispose();
     }//GEN-LAST:event_returnCancelbtnActionPerformed
 
     /**
@@ -203,7 +192,6 @@ public class ReturnForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JButton returnBackbtn;
     private javax.swing.JTextField returnBookidTxt;
     private javax.swing.JButton returnCancelbtn;
     private javax.swing.JButton returnDonebtn;

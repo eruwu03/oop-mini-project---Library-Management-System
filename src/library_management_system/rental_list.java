@@ -14,14 +14,14 @@ import java.util.logging.Level;
  *
  * @author user
  */
-public class RentalLists extends javax.swing.JFrame {
+public class rental_list extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RentalLists.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(rental_list.class.getName());
 
     /**
      * Creates new form RentalLists
      */
-    public RentalLists() {
+    public rental_list() {
         initComponents();
         loadRentalData();
     }
@@ -126,7 +126,13 @@ public class RentalLists extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listBackbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listBackbtnActionPerformed
-        setVisible(false);
+        java.awt.EventQueue.invokeLater(() -> {
+                Dashboard dashboard = new Dashboard();
+                dashboard.setLocationRelativeTo(null);
+                dashboard.setVisible(true);
+            });
+            
+            this.dispose();
     }//GEN-LAST:event_listBackbtnActionPerformed
 
     /**
@@ -151,7 +157,7 @@ public class RentalLists extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new RentalLists().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new rental_list().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

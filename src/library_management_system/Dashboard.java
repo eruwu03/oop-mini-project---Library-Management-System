@@ -48,9 +48,9 @@ public class Dashboard extends javax.swing.JFrame {
         member_view = new javax.swing.JButton();
         book_remove = new javax.swing.JButton();
         new_rent = new javax.swing.JButton();
-        return_rent = new javax.swing.JButton();
         view_rent = new javax.swing.JButton();
         logout = new javax.swing.JButton();
+        ReturnRent = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -165,12 +165,6 @@ public class Dashboard extends javax.swing.JFrame {
         new_rent.addActionListener(this::new_rentActionPerformed);
         getContentPane().add(new_rent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 220, 60));
 
-        return_rent.setBackground(new java.awt.Color(204, 204, 204));
-        return_rent.setText("ADD");
-        return_rent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        return_rent.addActionListener(this::return_rentActionPerformed);
-        getContentPane().add(return_rent, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 260, 60));
-
         view_rent.setBackground(new java.awt.Color(204, 204, 204));
         view_rent.setText("VIEW");
         view_rent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -182,6 +176,12 @@ public class Dashboard extends javax.swing.JFrame {
         logout.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logout.addActionListener(this::logoutActionPerformed);
         getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        ReturnRent.setBackground(new java.awt.Color(204, 204, 204));
+        ReturnRent.setText("RETURN");
+        ReturnRent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ReturnRent.addActionListener(this::ReturnRentActionPerformed);
+        getContentPane().add(ReturnRent, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 260, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/bg.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, -1));
@@ -199,24 +199,14 @@ public class Dashboard extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_book_addActionPerformed
 
-    private void book_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_viewActionPerformed
-         //new ViewBook().setVisible(true);
-         java.awt.EventQueue.invokeLater(() -> {
-        ViewBook viewbook = new ViewBook();
-        viewbook.setLocationRelativeTo(null);
-        viewbook.setVisible(true);
-        });  
-    this.dispose();
-    }//GEN-LAST:event_book_viewActionPerformed
-
     private void new_rentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_rentActionPerformed
         // TODO add your handling code here:
          java.awt.EventQueue.invokeLater(() -> {
-        RentingForm newrent = new RentingForm();
-        newrent.setLocationRelativeTo(null);
-        newrent.setVisible(true);
-        });  
-    this.dispose();
+            RentingForm rentform = new RentingForm();
+            rentform.setLocationRelativeTo(null);
+            rentform.setVisible(true);
+        });
+        this.dispose();
     }//GEN-LAST:event_new_rentActionPerformed
 
     private void book_removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_removeActionPerformed
@@ -229,25 +219,14 @@ public class Dashboard extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_book_removeActionPerformed
 
-    private void return_rentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_rentActionPerformed
-        // TODO add your handling code here:
-          java.awt.EventQueue.invokeLater(() -> {
-        ReturnForm returnrent = new ReturnForm();
-        returnrent.setLocationRelativeTo(null);
-        returnrent.setVisible(true);
-        });  
-    this.dispose();
-    }  
-    }//GEN-LAST:event_return_rentActionPerformed
-
     private void view_rentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_rentActionPerformed
         // TODO add your handling code here:
-                  java.awt.EventQueue.invokeLater(() -> {
-        RentalList rentlist = new RentalList();
-        rentlist.setLocationRelativeTo(null);
-        rentlist.setVisible(true);
-        });  
-    this.dispose();
+        java.awt.EventQueue.invokeLater(() -> {
+            rental_list rentlist = new rental_list();
+            rentlist.setLocationRelativeTo(null);
+            rentlist.setVisible(true);
+        });
+        this.dispose();
     }//GEN-LAST:event_view_rentActionPerformed
 
     private void member_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_member_createActionPerformed
@@ -272,6 +251,12 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void member_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_member_editActionPerformed
         //new EditMember().setVisible(true);
+        java.awt.EventQueue.invokeLater(() -> {
+        edit_membership editmem = new edit_membership();
+        editmem.setLocationRelativeTo(null);
+        editmem.setVisible(true);
+        });  
+        this.dispose();
     this.dispose();
     }//GEN-LAST:event_member_editActionPerformed
 
@@ -283,6 +268,26 @@ public class Dashboard extends javax.swing.JFrame {
         });  
         this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void book_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_viewActionPerformed
+        //new ViewBook().setVisible(true);
+        java.awt.EventQueue.invokeLater(() -> {
+            ViewBook viewbook = new ViewBook();
+            viewbook.setLocationRelativeTo(null);
+            viewbook.setVisible(true);
+        });
+        this.dispose();
+    }//GEN-LAST:event_book_viewActionPerformed
+
+    private void ReturnRentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnRentActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            ReturnForm returnrent = new ReturnForm();
+            returnrent.setLocationRelativeTo(null);
+            returnrent.setVisible(true);
+        });
+        this.dispose();
+    }//GEN-LAST:event_ReturnRentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,6 +315,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ReturnRent;
     private javax.swing.JButton book_add;
     private javax.swing.JButton book_remove;
     private javax.swing.JButton book_view;
@@ -329,7 +335,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton new_rent;
     private java.awt.Panel panel1;
     private java.awt.Panel panel3;
-    private javax.swing.JButton return_rent;
     private javax.swing.JButton view_rent;
     // End of variables declaration//GEN-END:variables
 }
