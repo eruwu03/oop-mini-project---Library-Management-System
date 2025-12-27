@@ -18,7 +18,7 @@ public class Library_management_system{
     public static void main(String[] args) {
         // TODO code application logic here
         java.awt.EventQueue.invokeLater(() -> {
-        logins loginForm = new logins();
+        login loginForm = new login();
         loginForm.setLocationRelativeTo(null);
         loginForm.setVisible(true);
         });  

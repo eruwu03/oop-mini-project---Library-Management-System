@@ -8,13 +8,13 @@ package library_management_system;
  *
  * @author eru
  */
-public class invalidLogin extends Exception {
+public class invalidLoginException extends Exception {
 
     /**
      * Creates a new instance of <code>invalidLogin</code> without detail
      * message.
      */
-    public invalidLogin() {
+    public invalidLoginException() {
     }
 
     /**
@@ -23,7 +23,7 @@ public class invalidLogin extends Exception {
      *
      * @param message the detail message.
      */
-    public invalidLogin(String message) {
+    public invalidLoginException(String message) {
         super(message);
     }
 }
