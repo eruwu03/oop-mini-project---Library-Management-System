@@ -52,7 +52,6 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
         ps.setString(2, member.getName());
         ps.setString(3, member.getPhone());
 
-       
         LocalDate parsedDate = LocalDate.parse(
             member.getRegisteredDate(),
             DateTimeFormatter.ofPattern("yyyy-MM-dd")
@@ -87,6 +86,7 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BackButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         newName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -101,7 +101,19 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         newId = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        BackButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+
+        BackButton.setBackground(new java.awt.Color(204, 204, 204));
+        BackButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/back.png"))); // NOI18N
+        BackButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(700, 450));
@@ -182,6 +194,22 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
         getContentPane().add(newId, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 290, -1));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("format: yyyy-MM-dd");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 120, 20));
+
+        BackButton1.setBackground(new java.awt.Color(204, 204, 204));
+        BackButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/back.png"))); // NOI18N
+        BackButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BackButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 50));
+
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/bg.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -248,6 +276,26 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
         // TODO add your handling code here:
     }//GEN-LAST:event_newDateActionPerformed
 
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        java.awt.EventQueue.invokeLater(() -> {
+            Dashboard dashboard = new Dashboard();
+            dashboard.setLocationRelativeTo(null);
+            dashboard.setVisible(true);
+        });
+    }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void BackButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton1ActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            Dashboard dashboard = new Dashboard();
+            dashboard.setLocationRelativeTo(null);
+            dashboard.setVisible(true);
+        });
+        this.dispose();
+    }//GEN-LAST:event_BackButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -274,9 +322,12 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton BackButton1;
     private javax.swing.JButton cancel;
     private javax.swing.JButton create;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

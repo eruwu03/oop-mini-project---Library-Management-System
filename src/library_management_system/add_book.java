@@ -59,6 +59,7 @@ public class add_book extends javax.swing.JFrame {
         SaveButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
+        BackButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,6 +169,17 @@ public class add_book extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 420, 31));
 
+        BackButton1.setBackground(new java.awt.Color(204, 204, 204));
+        BackButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/back.png"))); // NOI18N
+        BackButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BackButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 50));
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/bg.jpg"))); // NOI18N
         jLabel8.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
@@ -254,6 +266,16 @@ public class add_book extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel8ComponentShown
 
+    private void BackButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton1ActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            Dashboard dashboard = new Dashboard();
+            dashboard.setLocationRelativeTo(null);
+            dashboard.setVisible(true);
+        });
+        this.dispose();
+    }//GEN-LAST:event_BackButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,6 +302,7 @@ public class add_book extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton1;
     private javax.swing.JButton CancelButton;
     private javax.swing.JButton SaveButton;
     private javax.swing.JLabel jLabel1;
