@@ -39,6 +39,7 @@ public class Remove_Book extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        BackButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,6 +67,7 @@ public class Remove_Book extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/Untitled design (2).png"))); // NOI18N
         jButton1.setText("Cancel");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +79,7 @@ public class Remove_Book extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/done.png"))); // NOI18N
         jButton2.setText("Remove");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +87,18 @@ public class Remove_Book extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 90, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 100, 40));
+
+        BackButton1.setBackground(new java.awt.Color(204, 204, 204));
+        BackButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/back.png"))); // NOI18N
+        BackButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BackButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/bg.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -134,6 +148,16 @@ public class Remove_Book extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void BackButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton1ActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            Dashboard dashboard = new Dashboard();
+            dashboard.setLocationRelativeTo(null);
+            dashboard.setVisible(true);
+        });
+        this.dispose();
+    }//GEN-LAST:event_BackButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -160,6 +184,7 @@ public class Remove_Book extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -44,6 +44,8 @@ public class edit_membership extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        BackButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,6 +101,18 @@ public class edit_membership extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Phone No:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
+
+        BackButton1.setBackground(new java.awt.Color(204, 204, 204));
+        BackButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/back.png"))); // NOI18N
+        BackButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BackButton1.addActionListener(this::BackButton1ActionPerformed);
+        getContentPane().add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 50));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Search ID:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library_management_system/pics/bg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -206,6 +220,16 @@ public class edit_membership extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_saveActionPerformed
 
+    private void BackButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton1ActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            Dashboard dashboard = new Dashboard();
+            dashboard.setLocationRelativeTo(null);
+            dashboard.setVisible(true);
+        });
+        this.dispose();
+    }//GEN-LAST:event_BackButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -232,6 +256,7 @@ public class edit_membership extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton1;
     private javax.swing.JButton cancel;
     private javax.swing.JTextField fullname;
     private javax.swing.JLabel jLabel1;
@@ -240,6 +265,7 @@ public class edit_membership extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField phone;
     private javax.swing.JButton save;
     private javax.swing.JTextField search;
