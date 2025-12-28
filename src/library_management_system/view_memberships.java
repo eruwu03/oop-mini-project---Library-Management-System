@@ -52,7 +52,7 @@ public class view_memberships extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("View Book List ");
+        jLabel1.setText("Membership List ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, -1));
 
         jTable1.setBackground(new java.awt.Color(255, 255, 204));
