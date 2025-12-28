@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package library_management_system;
 
 import java.sql.Connection;
@@ -9,6 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 
 
 /**
@@ -39,26 +40,34 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
         initComponents();
     }
     
-    private void addMembership(String id, String name, String phone, String date)
-        throws dbErrorException {
+    private void addMembership(Member member) throws dbErrorException {
 
-        String sql = "INSERT INTO memberships (mem_id, mem_name, mem_phone, mem_registered) "
-                   + "VALUES (?, ?, ?, ?)";
+    String sql = "INSERT INTO memberships (mem_id, mem_name, mem_phone, mem_registered) "
+               + "VALUES (?, ?, ?, ?)";
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+    try (Connection conn = DBConnection.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, id);
-            ps.setString(2, name);
-            ps.setString(3, phone);
-            ps.setDate(4, java.sql.Date.valueOf(date));
+        ps.setString(1, member.getId());
+        ps.setString(2, member.getName());
+        ps.setString(3, member.getPhone());
 
-            ps.executeUpdate();
+       
+        LocalDate parsedDate = LocalDate.parse(
+            member.getRegisteredDate(),
+            DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        );
 
-        } catch (SQLException e) {
-            throw new dbErrorException("Failed to add membership");
-        }
+        ps.setDate(4, java.sql.Date.valueOf(parsedDate));
+
+        ps.executeUpdate();
+
+    } catch (SQLException | DateTimeParseException e) {
+        e.printStackTrace(); 
+        throw new dbErrorException("Failed to add membership");
     }
+}
+
     
     private void clearFields() {
         newId.setText("");
@@ -66,6 +75,7 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
         newPhone.setText("");
         newDate.setText("");
     }
+    
 
 
     /**
@@ -189,19 +199,20 @@ public class add_membership extends javax.swing.JFrame implements InputValidatio
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
         // TODO add your handling code here:
         try {
-        // Read values
-        String id = newId.getText();
-        String name = newName.getText();
-        String phone = newPhone.getText();
-        String date = newDate.getText(); 
 
        
         if (!validateFields()) {
             showMessage("Please fill all fields");
             return;
         }    
-  
-        addMembership(id, name, phone, date);
+            Member member = new Member();
+
+            member.setId(newId.getText());
+            member.setName(newName.getText());
+            member.setPhone(newPhone.getText());
+            member.setRegisteredDate(newDate.getText());
+
+            addMembership(member);
 
         JOptionPane.showMessageDialog(
             this,
